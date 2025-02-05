@@ -1,0 +1,19 @@
+{
+  "name": "type-challenge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "tsc --build tsconfig.json",
+    "test:dev": "tsc-watch --build tsconfig.json --onSuccess 'npm run test'"
+  },
+  "author": "Stefan van der Wolf",
+  "license": "ISC",
+  "description": "Type challenge",
+  "devDependencies": {
+    "@type-challenges/utils": "^0.1.1",
+    "@types/node": "^22.10.2",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.7.2"
+  }
+}

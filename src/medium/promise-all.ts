@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { MyAwaited } from '../easy/awaited'
 
 const promiseAllTest1 = PromiseAll([1, 2, 3] as const)
 const promiseAllTest2 = PromiseAll([1, 2, Promise.resolve(3)] as const)
@@ -13,5 +14,5 @@ export type cases = [
 ]
 
 declare function PromiseAll<const T extends unknown[]>(values: T): Promise<{
-  [K in keyof T]: Awaited<T[K]>
+  [K in keyof T]: MyAwaited<T[K]>
 }>

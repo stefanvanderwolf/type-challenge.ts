@@ -36,4 +36,4 @@ interface Expected3 {
   readonly title: string
 }
 
-type MyOmit<T, K extends keyof T> = MyPick<T, MyExclude<keyof T, K>>;
+export type MyOmit<T, K extends keyof T> = MyPick<T, MyExclude<keyof T, K>>;

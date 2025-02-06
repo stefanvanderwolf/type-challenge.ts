@@ -1,5 +1,6 @@
 import type { Equal, Expect } from '@type-challenges/utils'
 import type { MyPick } from '../easy/pick'
+import type { MyExclude } from '../easy/exclude'
 
 export type cases = [
   Expect<Equal<Expected1, MyOmit<Todo, 'description'>>>,
@@ -35,4 +36,4 @@ interface Expected3 {
   readonly title: string
 }
 
-type MyOmit<T, K extends keyof T> = MyPick<T, Exclude<keyof T, K>>;
+type MyOmit<T, K extends keyof T> = MyPick<T, MyExclude<keyof T, K>>;

@@ -19,7 +19,7 @@ type ComplexObject = {
 const fn = (v: boolean) => v ? 1 : 2
 const fn1 = (v: boolean, _w: any) => v ? 1 : 2
 
-type MyReturnType<T> = 
+export type MyReturnType<T> =
   // Eat up any arguments (or nothing) since we only care about the
   // return type.
   T extends (...args: any) => infer R 

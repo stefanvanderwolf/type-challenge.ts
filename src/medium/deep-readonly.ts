@@ -1,5 +1,4 @@
 import type { Equal, Expect } from '@type-challenges/utils'
-import type { MyReadonly } from '../easy/readonly'
 
 export type cases = [
   Expect<Equal<DeepReadonly<X1>, Expected1>>,
@@ -56,5 +55,9 @@ type Expected1 = {
 
 type Expected2 = { readonly a: string } | { readonly b: number }
 
-type DeepReadonly<T> =
-  { readonly [K in keyof T]: DeepReadonly<T[K]> };
+export type DeepReadonly<T> = 
+  T extends object 
+    ? T extends Function
+      ? T
+      : { readonly [K in keyof T]: DeepReadonly<T[K]> } 
+    : T;
